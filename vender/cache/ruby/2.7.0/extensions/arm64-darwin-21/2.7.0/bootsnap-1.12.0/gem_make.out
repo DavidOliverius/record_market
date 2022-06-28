@@ -1,0 +1,15 @@
+current directory: /Users/div/CoderAcademy/!Assignments/DavidOliverius_T2A2/record_market/vender/cache/ruby/2.7.0/gems/bootsnap-1.12.0/ext/bootsnap
+/Users/div/.rbenv/versions/2.7.5/bin/ruby -I /Users/div/.rbenv/versions/2.7.5/lib/ruby/2.7.0 -r ./siteconf20220628-19998-1f72pci.rb extconf.rb
+creating Makefile
+
+current directory: /Users/div/CoderAcademy/!Assignments/DavidOliverius_T2A2/record_market/vender/cache/ruby/2.7.0/gems/bootsnap-1.12.0/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/div/CoderAcademy/!Assignments/DavidOliverius_T2A2/record_market/vender/cache/ruby/2.7.0/gems/bootsnap-1.12.0/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/div/CoderAcademy/!Assignments/DavidOliverius_T2A2/record_market/vender/cache/ruby/2.7.0/gems/bootsnap-1.12.0/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20220628-19998-q758v4/bootsnap

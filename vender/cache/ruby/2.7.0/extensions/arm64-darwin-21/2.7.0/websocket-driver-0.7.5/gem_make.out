@@ -1,0 +1,15 @@
+current directory: /Users/div/CoderAcademy/!Assignments/DavidOliverius_T2A2/record_market/vender/cache/ruby/2.7.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+/Users/div/.rbenv/versions/2.7.5/bin/ruby -I /Users/div/.rbenv/versions/2.7.5/lib/ruby/2.7.0 -r ./siteconf20220628-19998-550179.rb extconf.rb
+creating Makefile
+
+current directory: /Users/div/CoderAcademy/!Assignments/DavidOliverius_T2A2/record_market/vender/cache/ruby/2.7.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /Users/div/CoderAcademy/!Assignments/DavidOliverius_T2A2/record_market/vender/cache/ruby/2.7.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/div/CoderAcademy/!Assignments/DavidOliverius_T2A2/record_market/vender/cache/ruby/2.7.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20220628-19998-17nqvo7
