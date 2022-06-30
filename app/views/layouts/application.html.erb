@@ -17,6 +17,10 @@
     </header>
     <main>
       <%= yield %>
+      
+      <% if Rails.env.development? %>
+        <% console %>
+      <% end %>
     </main>
   </body>
 </html>
