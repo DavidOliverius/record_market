@@ -7,9 +7,9 @@ RSpec.describe "listings/index", type: :view do
         title: "Title",
         artist: "Artist",
         label: "Label",
-        condition: "Condition",
+        condition: 2,
         description: nil,
-        price: 2,
+        price: 3,
         sold: false,
         user: nil,
         genre: nil
@@ -18,9 +18,9 @@ RSpec.describe "listings/index", type: :view do
         title: "Title",
         artist: "Artist",
         label: "Label",
-        condition: "Condition",
+        condition: 2,
         description: nil,
-        price: 2,
+        price: 3,
         sold: false,
         user: nil,
         genre: nil
@@ -33,9 +33,9 @@ RSpec.describe "listings/index", type: :view do
     assert_select "tr>td", text: "Title".to_s, count: 2
     assert_select "tr>td", text: "Artist".to_s, count: 2
     assert_select "tr>td", text: "Label".to_s, count: 2
-    assert_select "tr>td", text: "Condition".to_s, count: 2
-    assert_select "tr>td", text: nil.to_s, count: 2
     assert_select "tr>td", text: 2.to_s, count: 2
+    assert_select "tr>td", text: nil.to_s, count: 2
+    assert_select "tr>td", text: 3.to_s, count: 2
     assert_select "tr>td", text: false.to_s, count: 2
     assert_select "tr>td", text: nil.to_s, count: 2
     assert_select "tr>td", text: nil.to_s, count: 2

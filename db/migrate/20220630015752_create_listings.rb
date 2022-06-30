@@ -4,9 +4,9 @@ class CreateListings < ActiveRecord::Migration[7.0]
       t.string :title
       t.string :artist
       t.string :label
-      t.string :condition
+      t.integer :condition
       t.integer :price
-      t.boolean :sold, default: false
+      t.boolean :sold
       t.references :user, null: false, foreign_key: true
       t.references :genre, null: false, foreign_key: true
 

@@ -6,9 +6,9 @@ RSpec.describe "listings/show", type: :view do
       title: "Title",
       artist: "Artist",
       label: "Label",
-      condition: "Condition",
+      condition: 2,
       description: nil,
-      price: 2,
+      price: 3,
       sold: false,
       user: nil,
       genre: nil
@@ -20,9 +20,9 @@ RSpec.describe "listings/show", type: :view do
     expect(rendered).to match(/Title/)
     expect(rendered).to match(/Artist/)
     expect(rendered).to match(/Label/)
-    expect(rendered).to match(/Condition/)
-    expect(rendered).to match(//)
     expect(rendered).to match(/2/)
+    expect(rendered).to match(//)
+    expect(rendered).to match(/3/)
     expect(rendered).to match(/false/)
     expect(rendered).to match(//)
     expect(rendered).to match(//)

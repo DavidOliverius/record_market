@@ -3,7 +3,7 @@ FactoryBot.define do
     title { "MyString" }
     artist { "MyString" }
     label { "MyString" }
-    condition { "MyString" }
+    condition { 1 }
     description { nil }
     price { 1 }
     sold { false }
