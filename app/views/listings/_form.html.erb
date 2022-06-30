@@ -27,8 +27,8 @@
   </div>
 
   <div>
-    <%= form.label :condition, style: "display: block" %>
-    <%= form.number_field :condition %>
+      <%= form.label :condition, style: "display: block" %>
+      <%= form.select :condition, @conditions.map %>
   </div>
 
   <div>
@@ -53,7 +53,7 @@
 
   <div>
     <%= form.label :genre_id, style: "display: block" %>
-    <%= form.text_field :genre_id %>
+    <%= form.select :genre_id, @genres.map {|g| [g.name, g.id]} %>
   </div>
 
   <div>
