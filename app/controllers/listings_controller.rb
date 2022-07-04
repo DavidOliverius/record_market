@@ -2,6 +2,7 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: %i[ show edit update destroy ]
   before_action :set_form_vars, only: %i[ new edit ]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :authorize_user, only: [:edit, :update, :destroy]
 
   # GET /listings or /listings.json
   def index
@@ -76,6 +77,13 @@ class ListingsController < ApplicationController
     def set_form_vars
       @genres = Genre.all
       @conditions = Listing.conditions.keys
+    end
+
+    def authorize_user
+     if current_user.id != @listing.user_id
+        redirect_to listings_path
+        flash[:alert] = "You don't have permission!"
+     end
     end
 
 
