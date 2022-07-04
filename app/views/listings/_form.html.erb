@@ -55,8 +55,15 @@
     <%= form.label :genre_id, style: "display: block" %>
     <%= form.select :genre_id, @genres.map {|g| [g.name, g.id]} %>
   </div>
+      
+  <div>
+    <%= form.label :cover, style: "display: block" %>
+    <%= form.file_field :cover, accept: "image/png,image/jpg,image/jpeg,image,webp" %>
+  </div>
 
   <div>
     <%= form.submit %>
   </div>
+
+
 <% end %>
