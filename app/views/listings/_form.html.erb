@@ -26,12 +26,20 @@
     <%= form.text_field :label %>
   </div>
 
-  <div>
+  <%# <div>
+      <% @test_array = @conditions.map do |option| %>
+      <%# <% format_condition(option) %> 
+      <%# <% end %>  
+      <%# <%= form.label :condition, style: "display: block" %> 
+       <%# <%= form.select :condition, @test_array %>
+      <%# <%= form.select :condition, @conditions.map {|c| [c.name, c.id]} %> 
+  <%# </div> %> 
+
+    <div>
     <% @conditions.each do |option| %>
       <%= form.label :condition, format_condition(option) %>
       <%= form.radio_button :condition, option %>
     <% end %>
-  </div>
 
   <div>
     <%= form.label :description, style: "display: block" %>
@@ -41,16 +49,6 @@
   <div>
     <%= form.label :price, style: "display: block" %>
     <%= form.number_field :price %>
-  </div>
-
-  <div>
-    <%= form.label :sold, style: "display: block" %>
-    <%= form.check_box :sold %>
-  </div>
-
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
   </div>
 
   <div>

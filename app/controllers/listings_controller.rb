@@ -1,6 +1,7 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: %i[ show edit update destroy ]
   before_action :set_form_vars, only: %i[ new edit ]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /listings or /listings.json
   def index
@@ -50,13 +51,20 @@ class ListingsController < ApplicationController
   end
 
   # DELETE /listings/1 or /listings/1.json
+  # def destroy
+  #   @listing.destroy
+
+  #   respond_to do |format|
+  #     format.html { redirect_to listings_url, notice: "Listing was successfully destroyed." }
+  #     format.json { head :no_content }
+  #   end
+  # end
+
   def destroy
+    @listing = Listing.find(params[:id])
     @listing.destroy
 
-    respond_to do |format|
-      format.html { redirect_to listings_url, notice: "Listing was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to listings_path, status: :see_other, notice: "Listing was successfully destroyed."
   end
 
   private

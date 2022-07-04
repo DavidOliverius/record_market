@@ -1,10 +1,8 @@
-<p style="color: green"><%= notice %></p>
-
 <%= render @listing %>
 
 <div>
   <%= link_to "Edit this listing", edit_listing_path(@listing) %> |
   <%= link_to "Back to listings", listings_path %>
 
-  <%= button_to "Destroy this listing", @listing, method: :delete %>
+  <%= link_to "Destroy this listing", @listings, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger ml-3" %>
 </div>
