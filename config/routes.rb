@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   resources :listings
   devise_for :users
+  root "pages#home"
   get 'browse', to: 'listings#index'
   get 'about', to: 'pages#about'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  root "pages#home"
+  post "listings/:id/order", to: "listings#place_order", as: "place_order"
+
+  get 'pages/success', to: 'pages#success', as: "order_success"
 end

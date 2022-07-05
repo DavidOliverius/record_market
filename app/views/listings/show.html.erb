@@ -10,4 +10,13 @@
   <%= link_to "Edit this listing", edit_listing_path(@listing), class: "btn btn-primary" %> 
   <%= link_to "Destroy this listing", @listings, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger ml-3" %>
   <% end %>
+
+  <% if current_user %>
+  <%= button_to "Buy Now", place_order_path, class: "btn btn-success"  %>
+  <% end %>
+
+  <% if !current_user %>
+  <br>
+  <h2>Please Login or Register to buy records!</h2>
+  <% end %>
 </div>
