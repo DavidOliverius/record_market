@@ -9,6 +9,4 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
 
   post "listings/:id/order", to: "listings#place_order", as: "place_order"
-
-  get 'pages/success', to: 'pages#success', as: "order_success"
 end
