@@ -1,6 +1,8 @@
 class ListingsController < ApplicationController
-  before_action :set_listing, only: %i[ show edit update destroy ]
+  before_action :set_listing, only: %i[ show edit update destroy place_order ]
   before_action :set_form_vars, only: %i[ new edit ]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authorize_user, only: [:edit, :update, :destroy]
 
   # GET /listings or /listings.json
   def index
@@ -23,6 +25,7 @@ class ListingsController < ApplicationController
   # POST /listings or /listings.json
   def create
     @listing = Listing.new(listing_params)
+    @listing.user = current_user
 
     respond_to do |format|
       if @listing.save
@@ -49,13 +52,32 @@ class ListingsController < ApplicationController
   end
 
   # DELETE /listings/1 or /listings/1.json
+  # def destroy
+  #   @listing.destroy
+
+  #   respond_to do |format|
+  #     format.html { redirect_to listings_url, notice: "Listing was successfully destroyed." }
+  #     format.json { head :no_content }
+  #   end
+  # end
+
   def destroy
+    @listing = Listing.find(params[:id])
     @listing.destroy
 
-    respond_to do |format|
-      format.html { redirect_to listings_url, notice: "Listing was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to listings_path, status: :see_other, notice: "Listing was successfully destroyed."
+  end
+
+  def place_order
+    Order.create(
+      listing_id: @listing.id,
+      seller_id: @listing.user_id,
+      buyer_id: current_user.id
+    )
+
+    @listing.update(sold: true)
+
+    redirect_to orders_success_path
   end
 
   private
@@ -69,9 +91,16 @@ class ListingsController < ApplicationController
       @conditions = Listing.conditions.keys
     end
 
+    def authorize_user
+     if current_user.id != @listing.user_id
+        redirect_to listings_path
+        flash[:alert] = "You don't have permission!"
+     end
+    end
+
 
     # Only allow a list of trusted parameters through.
     def listing_params
-      params.require(:listing).permit(:title, :artist, :label, :condition, :description, :price, :sold, :user_id, :genre_id)
+      params.require(:listing).permit(:title, :artist, :label, :condition, :description, :price, :sold, :user_id, :genre_id, :cover)
     end
 end

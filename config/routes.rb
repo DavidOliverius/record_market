@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  get 'orders/success'
+  get 'orders/bought'
+  get 'orders/sold'
   resources :listings
   devise_for :users
-  get 'about', to: 'pages#about'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
   root "pages#home"
+  get 'browse', to: 'listings#index'
+  get 'about', to: 'pages#about'
+
+  post "listings/:id/order", to: "listings#place_order", as: "place_order"
 end

@@ -26,10 +26,20 @@
     <%= form.text_field :label %>
   </div>
 
-  <div>
-      <%= form.label :condition, style: "display: block" %>
-      <%= form.select :condition, @conditions.map %>
-  </div>
+  <%# <div>
+      <% @test_array = @conditions.map do |option| %>
+      <%# <% format_condition(option) %> 
+      <%# <% end %>  
+      <%# <%= form.label :condition, style: "display: block" %> 
+       <%# <%= form.select :condition, @test_array %>
+      <%# <%= form.select :condition, @conditions.map {|c| [c.name, c.id]} %> 
+  <%# </div> %> 
+
+    <div>
+    <% @conditions.each do |option| %>
+      <%= form.label :condition, format_condition(option) %>
+      <%= form.radio_button :condition, option %>
+    <% end %>
 
   <div>
     <%= form.label :description, style: "display: block" %>
@@ -42,21 +52,18 @@
   </div>
 
   <div>
-    <%= form.label :sold, style: "display: block" %>
-    <%= form.check_box :sold %>
-  </div>
-
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div>
     <%= form.label :genre_id, style: "display: block" %>
     <%= form.select :genre_id, @genres.map {|g| [g.name, g.id]} %>
+  </div>
+      
+  <div>
+    <%= form.label :cover, style: "display: block" %>
+    <%= form.file_field :cover, accept: "image/png,image/jpg,image/jpeg,image,webp" %>
   </div>
 
   <div>
     <%= form.submit %>
   </div>
+
+
 <% end %>

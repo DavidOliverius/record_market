@@ -1,0 +1,38 @@
+<br>
+<div class="container">
+    <h1>Bought Records</h1>
+</div>
+<br>
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Label</th>
+                <th>Condition</th>
+                <th>Price</th>
+                <th>Genre</th>
+                <th>Sold By</th>
+                <th>Listing</th>
+                <th colspan="3"></th>
+            </tr>
+        </thead>
+    
+        <tbody>
+            <% @bought_items.each do |item| %>
+                <tr>
+                    <td><%= item.listing.title %></td>
+                    <td><%= item.listing.artist %></td>
+                    <td><%= item.listing.label %></td>
+                    <td><%= item.listing.condition %></td>
+                    <td><%= number_to_currency(item.listing.price) %></td>
+                    <td><%= item.listing.genre.name %></td>
+                    <td><%= item.seller.username %></td>
+                    <td><%= link_to "Show", item.listing %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

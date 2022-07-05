@@ -1,10 +1,26 @@
-<p style="color: green"><%= notice %></p>
+
 
 <%= render @listing %>
 
-<div>
-  <%= link_to "Edit this listing", edit_listing_path(@listing) %> |
-  <%= link_to "Back to listings", listings_path %>
 
-  <%= button_to "Destroy this listing", @listing, method: :delete %>
+<div>
+  <%= link_to "Back to listings", listings_path, class: "btn btn-secondary" %>
+
+  <% if current_user && current_user.id == @listing.user_id%>
+    <%= link_to "Edit this listing", edit_listing_path(@listing), class: "btn btn-primary" %> 
+    <%= link_to "Destroy this listing", @listings, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger ml-3" %>
+  <% end %>
+
+
+
+  <% if @listing.sold %>
+  <p>Record sold.</p>
+  <% elsif current_user && current_user.id == @listing.user_id%>
+  <% elsif current_user %>
+  <%= button_to "Buy Now", place_order_path, class: "btn btn-success"  %>
+  <% else %>
+      <br>
+      <br>
+    <h3>Please Login or Register to buy records!</h3>
+  <% end %>
 </div>

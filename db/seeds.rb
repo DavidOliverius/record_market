@@ -16,3 +16,15 @@ if Genre.count == 0
         puts "created #{genre} genre"
     end
 end
+
+User.create!([
+    {email: "dolive7@gmail.com", password: "password", username: "dolive"},
+    {email: "test@test.com", password: "password", username: "test"},
+    {email: "jane@doe.com", password: "password", username: "jane"},
+  ])
+
+# Listing.create!([
+#     {title: }
+
+
+# ])
