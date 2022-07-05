@@ -1,4 +1,15 @@
 <div id="<%= dom_id listing %>">
+
+  <div>
+    <% if listing.cover.attached? %>
+    <%= image_tag listing.cover, alt: listing.title, class: "img-fluid", width:"250", height:"250"  %>
+    <% else %>
+    <%= image_tag "cover_fallback.svg", alt: listing.title, class: "img-fluid", width:"250", height:"250"  %>
+    <% end %>
+  </div>
+
+    <br>
+
   <p>
     <strong>Title:</strong>
     <%= listing.title %>
@@ -26,17 +37,7 @@
 
   <p>
     <strong>Price:</strong>
-    <%= listing.price %>
-  </p>
-
-  <p>
-    <strong>Sold:</strong>
-    <%= listing.sold %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= listing.user_id %>
+    $<%= listing.price %>
   </p>
 
   <p>
