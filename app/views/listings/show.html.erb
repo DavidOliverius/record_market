@@ -20,11 +20,7 @@
   <%= button_to "Buy Now", place_order_path, class: "btn btn-success"  %>
   <% else %>
       <br>
-    <h2>Please Login or Register to buy records!</h2>
-  <% end %>
-
-  <% if !current_user %>
-    <br>
-    <h2>Please Login or Register to buy records!</h2>
+      <br>
+    <h3>Please Login or Register to buy records!</h3>
   <% end %>
 </div>
