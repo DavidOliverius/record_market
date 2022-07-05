@@ -5,8 +5,11 @@
             <%= current_user.username %>
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Browse Listings</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <%= link_to "Buy Records", browse_path, class:"dropdown-item" %>
+            <%= link_to "Sell Records", new_listing_path, class:"dropdown-item" %>
+            <li><hr class="dropdown-divider"></li>
+            <%= link_to "Bought Items", orders_bought_path, class:"dropdown-item" %>
+            <%= link_to "Sold Items", orders_sold_path, class:"dropdown-item" %>
             <li><hr class="dropdown-divider"></li>
             <li><%= link_to "Edit Profile", edit_user_registration_path, class:"dropdown-item" %></li>
             <li><%= link_to "Log Out", destroy_user_session_path, data: { turbo_method: :delete }, class:"dropdown-item" %></li>
