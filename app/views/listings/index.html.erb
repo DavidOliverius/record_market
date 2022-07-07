@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 
-  <div class="row lg-12 md-12 m-2 p-2">
+  <div class="row">
     <% @listings.each do |listing| %>
-    <div class="col lg-4 md-4">
+    <div class="col-md-6 col-lg-4 col-xl-4 col-xxl-3 g-4">
       
       <div class="card">
         <% if listing.cover.attached? %>
         <%= image_tag listing.cover, alt: listing.title, class:"card-img-top ratio ratio-1x1", width:"auto", height:"auto"  %>
         <% else %>
-        <%= image_tag "cover_fallback.svg", alt: listing.title, class:"card-img-top ratio ratio-1x13", width:"auto", height:"auto"  %>
+        <%= image_tag "cover_fallback.svg", alt: listing.title, class:"card-img-top ratio ratio-1x1", width:"auto", height:"auto"  %>
         <% end %>
         <div class="card-body">
           <h5 class="card-title"><%=listing.title%></h5>
