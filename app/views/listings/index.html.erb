@@ -3,7 +3,7 @@
 
   <div class="row">
     <% @listings.each do |listing| %>
-    <div class="col-md-6 col-lg-4 col-xl-4 col-xxl-3 g-4">
+    <div class="col-md-6 col-xl-4 col-xxl-3 g-4">
       
       <div class="card">
         <% if listing.cover.attached? %>
@@ -14,15 +14,19 @@
         <div class="card-body">
           <h5 class="card-title"><%=listing.title%></h5>
           <h6 class="card-subtitle mb-2 text-muted"><%=listing.artist%></h6>
-            <p class="card-text mt-2"><%=listing.description %></p>
-            <p class="card-text">
-            <p class="card-text mt-2">
             <p class="card-text mt-2">
               <strong>Genre:</strong>
               <%= listing.genre.name %>
             </p>
-            <small class="text-muted">Seller: <%=listing.label%></small></p>
+            
+            <p class="card-text mt-2 text-center"><%=listing.description %></p>
+            <p class="card-text">
+             <hr class="my-4">
+            <p class="card-text mt-2">
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <%=link_to "Buy Now - $#{listing.price}", listing, class: "btn btn-success"%>
+            </div>
             
         </div>
       </div>
