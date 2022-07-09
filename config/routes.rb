@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'orders/sold'
   resources :listings
   devise_for :users
-  root "pages#home"
+  root "listings#index"
   get 'browse', to: 'listings#index'
   get 'about', to: 'pages#about'
 

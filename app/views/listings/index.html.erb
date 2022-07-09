@@ -1,5 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+  <div class="text-black px-1 py-1 text-center">
+    <div class="py-5">
+      <h4 class="fw-bold">Welcome to the</h4>
+      <h1 class="display-5 fw-bold">Record Market</h1>
+      <div class="col-lg-6 mx-auto">
+      <br>
+        <p class="fs-5 mb-4">Find the record you have spent years digging for, or come across an unexepcted gem!</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <%= link_to 'Sell your Records', new_listing_path, class:"btn btn-lg btn-outline-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <div class="row">
     <% @listings.each do |listing| %>
@@ -37,6 +51,6 @@
    <% end %>
   </div>
   <br>
-<%= link_to 'Sell Record', new_listing_path, class:"btn btn-primary" %>
+
 </div>
 
