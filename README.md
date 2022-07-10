@@ -57,8 +57,7 @@ A marketplace for second-hand used Vinyl Records, primarily focused on electroni
 </details>
 
 ### Target Audience
-
-  
+The target audience is anyone that collects Vinyl records and is looking for another avenue to source unique and interesting music. 
 
 ### Tech Stack
 
