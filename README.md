@@ -9,16 +9,16 @@
 ---
 
 ## Identification of the problem you are trying to solve by building this particular marketplace app
----
+
 **Record Market** is designed to solve the problem of vinyl record collectors and affocionados find each other to buy and sell used records, allowing users from around the globe find a specific hard to find record. 
   
 
 ## Why is it a problem that needs solving?
----
+
 Gone are the days of physically 'digging' for records at your local vinyl record shop hoping to find the gem you've been searching years for, or come across something unexpected. Now you can use Record Market to find hidden gems from a much wider array of people than just those that interact with your local vinyl store.
   
 ## Description
----
+
 ### Purpose
 A marketplace for second-hand used Vinyl Records, primarily focused on electronic club music and a direct competitor with Discogs with a boutique focus - allowing users to both buy and sell records.
   
@@ -77,7 +77,7 @@ A marketplace for second-hand used Vinyl Records, primarily focused on electroni
 
 
 ## User Stories
----
+
 - As a seller, I want to be able to list my used records for sale
 - As a seller, I want to be able to upload a photo of my record
 - As a seller, I want to see who bought my listing
@@ -91,7 +91,7 @@ A marketplace for second-hand used Vinyl Records, primarily focused on electroni
 - As a user, I want to have the ability to delete my account
   
 ## Wireframes
----
+
 <details>
     <summary>Expand</summary>
 
@@ -133,12 +133,12 @@ A marketplace for second-hand used Vinyl Records, primarily focused on electroni
 </details>
 
 ## ERD
----
+
 
 ![ERD](docs/erd.png)
 
 ## High-level Components
----
+
 Underwriting the entire project is Ruby on Rail's MVC architecture, separating and dividing application logic. In conjunction with Rails, PostgreSQL is used as the database management system so that data persists between sessions, both in development and deployment.
 
 The **Model** interacts directly with the database, and each Model within the Rails project correlates with a table in the project's PostgreSQL database. The Models allow associations between other Models to be set in conjuction with the schema, and then foreign keys can be set and data can be manipulated between different Models thanks to Rails' Active Record. Active Record has a plethora of in-built methods to access and manipulate data within the Models. For example, using the Rails console and entering the following returns the first entry on the Listings table from the database.
@@ -166,7 +166,7 @@ With one simple command you can change all of the records in your database quick
 
 The **Controllers** work together to handle requests to and from the View and the Model. Methods defined within specific controllers tell the application how to handle specific requests from Users, and how those requests should interact with the Model.  
 ## Third Party Services
----
+
 #### Devise
 Devise handles user accounts, including the login/sign up pages, password encryption and authentication. Allows easy authorisation with `before_action :authenticate_user` to any controller you want to limit access to. 
 #### Bootstrap
@@ -181,7 +181,7 @@ Enables search function on listings, searches in specific keys on listings and r
 Powerful open source SQL database management system. Required for Heroku deployment.
 
 ## Describe your projects models in terms of the relationships they have with each other
----
+
 ### User Model
 - A User has many Listings, allowing them to make as many as they would like and giving them control over any Listings they create. For Listings the User owns, they are allowed to edit any data associated with that Listing and they can delete the Listing entirely if they wish.
 - A User has many sold orders. As Users have many listings, each of these listings can potentially be sold as well. When a Listing is bought a seller_id is created on the Order model associating the seller with the Listing and the Order.
@@ -198,7 +198,7 @@ Powerful open source SQL database management system. Required for Heroku deploym
 - An Order belongs to a Seller. This associates the Order with the foreign key of the User that sold the Listing.
 
 ## Discuss the database relations to be implemented in your application
----
+
 In line with the ERD, the database relations implemented within the project are as follows:
 
 ### Users
@@ -225,7 +225,7 @@ The Genres table has a preset selection of Genres for Users to select when they 
 
 
 ## Database Schema Design
----
+
 
 <details>
     <summary>Expand</summary>
