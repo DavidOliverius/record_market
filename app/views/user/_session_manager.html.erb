@@ -5,9 +5,6 @@
             <%= current_user.username %>
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <%= link_to "Buy Records", browse_path, class:"dropdown-item" %>
-            <%= link_to "Sell Records", new_listing_path, class:"dropdown-item" %>
-            <li><hr class="dropdown-divider"></li>
             <%= link_to "Bought Items", orders_bought_path, class:"dropdown-item" %>
             <%= link_to "Sold Items", orders_sold_path, class:"dropdown-item" %>
             <li><hr class="dropdown-divider"></li>

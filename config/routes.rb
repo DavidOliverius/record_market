@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   devise_for :users
   root "listings#index"
   get 'browse', to: 'listings#index'
-  get 'about', to: 'pages#about'
 
   post "listings/:id/order", to: "listings#place_order", as: "place_order"
 end
