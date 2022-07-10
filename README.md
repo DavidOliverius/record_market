@@ -24,9 +24,10 @@ A marketplace for second-hand used Vinyl Records, primarily focused on electroni
   
 
 ### Functionality and Features
-- User account and authentication
-- Create vinyl listings
-- Buy vinyl listings
+- User account creation and authentication
+- Create Vinyl listings
+- Buy Vinyl listings
+- Search Vinyl listings
 - Order history
   
 
@@ -164,7 +165,7 @@ CRUD operations can also be undertaken with these methods, allowing intuitive wa
 ```
 With one simple command you can change all of the records in your database quickly, which can have a dramatic impact on your project and make testing and debugging a breeze.
 
-The **Controllers** work together to handle requests to and from the View and the Model. Methods defined within specific controllers tell the application how to handle specific requests from Users, and how those requests should interact with the Model.  
+The **Controllers** work together to handle requests to and from the View and the Model. Methods defined within specific controllers tell the application how to handle specific requests from Users, and how those requests should interact with the Model.   
 ## Third Party Services
 
 #### Devise
