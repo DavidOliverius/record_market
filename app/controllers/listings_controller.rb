@@ -68,6 +68,7 @@ class ListingsController < ApplicationController
     redirect_to listings_path, status: :see_other, notice: "Listing was successfully destroyed."
   end
 
+  # Associates foreign key IDs with Order model
   def place_order
     Order.create(
       listing_id: @listing.id,
